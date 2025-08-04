@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dazzlet | Crafted to Shine</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fffaf3;
+      color: #2e2e2e;
+    }
+    header {
+      background-color: #0e1a40;
+      color: #f4d27a;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+    header img {
+      width: 180px;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1rem;
+      font-style: italic;
+    }
+    .section {
+      padding: 2rem 1rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .section h2 {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .gallery img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .cta {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .cta a {
+      background-color: #f4d27a;
+      color: #0e1a40;
+      padding: 0.6rem 1.2rem;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 1rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      display: inline-block;
+      margin: 0.5rem;
+    }
+    #contact {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    #contact p {
+      font-size: 1rem;
+    }
+    footer {
+      background-color: #0e1a40;
+      color: #ffffff;
+      text-align: center;
+      padding: 1.2rem;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      header p {
+        font-size: 0.9rem;
+      }
+      .section h2 {
+        font-size: 1.5rem;
+      }
+      .gallery img {
+        width: 140px;
+        height: 140px;
+      }
+    }
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+      header p {
+        font-size: 0.85rem;
+      }
+      .gallery img {
+        width: 120px;
+        height: 120px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="../images/Dazzlet-logo.png" alt="Dazzlet Logo">
+    <p>Handcrafted with care, our jewellery celebrates your elegance, uniqueness, and sparkle. Whether it's pearls, charms, or minimalistic trends — each piece is made to reflect you.</p>
+  </header>
+
+  <section class="section">
+    <h2>Explore Our Collections</h2>
+    <div class="cta">
+      <a href="#desrigner-earrings">Designer Earrings</a>
+      <!-- <a href="#pearl-earrings" style="margin-left:1rem;">Pearl Earrings</a>
+      <a href="#charm-earrings" style="margin-left:1rem;">Charm Earrings</a> -->
+      <a href="#korean-earrings" style="margin-left:1rem;">Korean Earrings</a>
+      <a href="#oxidized-earrings" style="margin-left:1rem;">Oxidized Earrings</a>
+    </div>
+  </section>
+  <p style="text-align:center; color:#444; font-style:italic; margin-top:1rem;">All images shown are real product photographs — <b> no AI-generated visuals. </b></p>
+  <section class="section">
+    <h3 id="desrigner-earrings" style="text-align:center; margin-top:2rem; color:#555;">Designer Earrings</h3>
+    <div class="gallery">
+      <a href="#" onclick="showDetails('Charm Sparkle', 'Model CE301', 'Shiny charm drop earrings.', 'Rs 160', '25% OFF', 'Rs 120', '../images/designer/ap001')">
+        <img src="../images/designer/ap001.jpg" alt="Charm 1">
+      </a>
+    </div>
+  </section>
+
+<!-- <section class="section">
+  <h3 id="pearl-earrings" style="text-align:center; margin-top:2rem; color:#555;">Pearl Earrings</h3>
+  <div class="gallery">
+    <a href="#" onclick="showDetails('Charm Sparkle', 'Model CE301', 'Shiny charm drop earrings.', 'Rs 160', '25% OFF', 'Rs 120', 'https://picsum.photos/750?101', 'https://picsum.photos/750?111', 'https://picsum.photos/750?121')">
+      <img src="https://picsum.photos/750?101" alt="Charm 1">
+    </a>
+  </div>
+</section> -->
+
+<!-- <section class="section">
+  <h3 id="charm-earrings" style="text-align:center; margin-top:2rem; color:#555;">Charm Earrings</h3>
+  <div class="gallery">
+    <a href="#" onclick="showDetails('Charm Sparkle', 'Model CE301', 'Shiny charm drop earrings.', 'Rs 160', '25% OFF', 'Rs 120', '../images/charm/ad01')">
+      <img src="../images/charm/ad01.jpg" alt="Charm 1">
+    </a>
+  </div>
+</section> -->
+
+  <section class="section">
+  <h3 id="korean-earrings" style="text-align:center; margin-top:2rem; color:#555;">Korean Earrings</h3>
+  <div class="gallery">
+    <a href="#" onclick="showDetails('Charm Sparkle', 'Model CE301', 'Shiny charm drop earrings.', 'Rs 160', '25% OFF', 'Rs 120', '../images/charm/ac001')">
+      <img src="../images/charm/ac001.jpg" alt="Charm 1">
+    </a>
+    <a href="#" onclick="showDetails('Rose Charm', 'Model CE302', 'Delicate rose charm danglers.', 'Rs 170', '20% OFF', 'Rs 136', '../images/charm/ac002')">
+      <img src="../images/charm/ac002.jpg" alt="Charm 2">
+    </a>
+    <a href="#" onclick="showDetails('Golden Petal', 'Model CE303', 'Petal-shaped golden charm.', 'Rs 180', '30% OFF', 'Rs 126', '../images/charm/ac003')">
+      <img src="../images/charm/ac003.jpg" alt="Charm 3">
+    </a>
+    <a href="#" onclick="showDetails('Twinkle Drop', 'Model CE304', 'Chic and minimalistic charm design.', 'Rs 150', '10% OFF', 'Rs 135', '../images/charm/ac004')">
+      <img src="../images/charm/ac004.jpg" alt="Charm 4">
+    </a>
+    <a href="#" onclick="showDetails('Silver Bloom', 'Model CE305', 'Silver finish blooming flower charm.', 'Rs 190', '20% OFF', 'Rs 152', '../images/charm/ac005')">
+      <img src="../images/charm/ac005.jpg" alt="Charm 5">
+    </a>
+    <a href="#" onclick="showDetails('Twinkle Drop', 'Model CE304', 'Chic and minimalistic charm design.', 'Rs 150', '10% OFF', 'Rs 135', '../images/charm/ac006')">
+      <img src="../images/charm/ac006.jpg" alt="Charm 4">
+    </a>
+    <a href="#" onclick="showDetails('Silver Bloom', 'Model CE305', 'Silver finish blooming flower charm.', 'Rs 190', '20% OFF', 'Rs 152', '../images/charm/ac007')">
+      <img src="../images/charm/ac007.jpg" alt="Charm 5">
+    </a>
+    <a href="#" onclick="showDetails('Twinkle Drop', 'Model CE304', 'Chic and minimalistic charm design.', 'Rs 150', '10% OFF', 'Rs 135', '../images/charm/ac008')">
+      <img src="../images/charm/ac008.jpg" alt="Charm 4">
+    </a>
+    <a href="#" onclick="showDetails('Silver Bloom', 'Model CE305', 'Silver finish blooming flower charm.', 'Rs 190', '20% OFF', 'Rs 152', '../images/charm/ac009')">
+      <img src="../images/charm/ac009.jpg" alt="Oxidized 5">
+    </a>
+  </div>
+</section>
+
+  <section class="section">
+  <h3 id="oxidized-earrings" style="text-align:center; margin-top:2rem; color:#555;">Oxidized Earrings</h3>
+  <div class="gallery">
+    <a href="#" onclick="showDetails('Charm Sparkle', 'Model CE301', 'Shiny charm drop earrings.', 'Rs 160', '25% OFF', 'Rs 120', '../images/oxidized/ao001')">
+      <img src="../images/oxidized/ao001.jpg" alt="Oxidized 1">
+    </a>
+    <a href="#" onclick="showDetails('Rose Charm', 'Model CE302', 'Delicate rose charm danglers.', 'Rs 170', '20% OFF', 'Rs 136', '../images/oxidized/ao002')">
+      <img src="../images/oxidized/ao002.jpg" alt="Oxidized 2">
+    </a>
+    <a href="#" onclick="showDetails('Golden Petal', 'Model CE303', 'Petal-shaped golden charm.', 'Rs 180', '30% OFF', 'Rs 126', '../images/oxidized/ao003')">
+      <img src="../images/oxidized/ao003.jpg" alt="Oxidized 3">
+    </a>
+    <a href="#" onclick="showDetails('Twinkle Drop', 'Model CE304', 'Chic and minimalistic charm design.', 'Rs 150', '10% OFF', 'Rs 135', '../images/oxidized/ao004')">
+      <img src="../images/oxidized/ao004.jpg" alt="Oxidized 4">
+    </a>
+</section>
+
+  <section id="contact" class="section">
+    <h2>Contact Us</h2>
+    <p>For orders and inquiries, DM us on Instagram at <a href="https://www.instagram.com/dazzlet_jewels" target="_blank">@dazzlet_jewels</a></p>
+    <p>For orders and inquiries, email us at <a href="mailto:dazzletjewels@gmail.com" target="_blank">dazzletjewels@gmail.com</a></p>
+  </section>
+
+  <footer>
+    &copy; 2025 Dazzlet. All rights reserved. | Follow us on <a href="https://www.instagram.com/dazzlet_jewels" target="_blank" style="color: #f4d27a; text-decoration: underline;">Instagram</a>
+  </footer>
+
+  <div id="product-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.8); z-index:1000; justify-content:center; align-items:center;">
+    <div style="background:#fff; padding:2rem; width:80%; max-width:1000px; border-radius:10px; display:flex; gap:2rem; flex-wrap:wrap; position:relative;">
+      <div style="flex:1; min-width:300px; position:relative;">
+        <img id="modal-image" src="" style="width:100%; height:400px; object-fit:contain; border-radius:10px; transition: transform 0.3s ease-in-out; cursor: zoom-in;" onmouseenter="this.style.transform='scale(1.5)'" onmouseleave="this.style.transform='scale(1)'">
+        <button onclick="prevImage()" style="position:absolute; top:50%; left:10px; transform:translateY(-50%); font-size:2rem; background:none; border:none; cursor:pointer;">&#10094;</button>
+        <button onclick="nextImage()" style="position:absolute; top:50%; right:10px; transform:translateY(-50%); font-size:2rem; background:none; border:none; cursor:pointer;">&#10095;</button>
+        <div id="image-dots" style="text-align:center; margin-top:0.5rem;"></div>
+      </div>
+      <div style="flex:1; min-width:250px;">
+        <h2 id="modal-title">Product Name</h2>
+        <p id="modal-model">Model: XXX</p>
+        <p id="modal-description">Description goes here.</p>
+        <p><del id="modal-price">Rs 150</del> <strong id="modal-final">Rs 100</strong></p>
+        <p id="modal-offer" style="color:#c62828; font-weight:bold;">30% OFF</p>
+        <a href="https://www.instagram.com/dazzlet_jewels" target="_blank" style="color:#0e1a40; text-decoration:underline;">Buy on Instagram</a>
+      </div>
+      <button onclick="document.getElementById('product-modal').style.display='none'" style="position:absolute; top:10px; right:20px; background:none; border:none; color:#000; font-size:2rem; cursor:pointer;">&times;</button>
+    </div>
+  </div>
+
+  <script>
+    let currentImageIndex = 0;
+    let modalImages = [];
+
+    function showDetails(title, model, description, price, discount, finalPrice, imagesUrl) {
+      const modal = document.getElementById('product-modal');
+      if (!modal) return;
+      modal.style.display = 'flex';
+      let images = [imagesUrl+".jpg", imagesUrl+"_2.jpg", imagesUrl+"_3.jpg", imagesUrl+"_4.jpg"];
+      const img = document.getElementById('modal-image');
+      if (!img) return;
+
+      document.getElementById('modal-title').innerText = title;
+      document.getElementById('modal-model').innerText = model;
+      document.getElementById('modal-description').innerText = description;
+      document.getElementById('modal-price').innerText = price;
+      document.getElementById('modal-final').innerText = finalPrice;
+      document.getElementById('modal-offer').innerText = discount;
+      modalImages = images;
+      currentImageIndex = 0;
+      updateModalImage();
+    }
+
+    function updateModalImage() {
+      const img = document.getElementById('modal-image');
+      if (!img || modalImages.length === 0) return;
+      img.src = modalImages[currentImageIndex];
+
+      const dotsContainer = document.getElementById('image-dots');
+      if (dotsContainer) {
+        dotsContainer.innerHTML = modalImages.map((_, i) => `<span style="display:inline-block; width:10px; height:10px; margin:5px; border-radius:50%; background:${i === currentImageIndex ? '#0e1a40' : '#ccc'};"></span>`).join('');
+      }
+    }
+
+    function nextImage() {
+      currentImageIndex = (currentImageIndex + 1) % modalImages.length;
+      updateModalImage();
+    }
+
+    function prevImage() {
+      currentImageIndex = (currentImageIndex - 1 + modalImages.length) % modalImages.length;
+      updateModalImage();
+    }
+  </script>
+</body>
+</html>
