@@ -131,6 +131,40 @@
         height: 120px;
       }
     }
+     /* Base styles for the modal content */
+  #product-modal > div {
+    display: flex; /* Make sure this is set for desktop and mobile */
+    gap: 2rem;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+/* Responsive styles for mobile devices */
+  @media (max-width: 768px) {
+    /* This rule targets the main content container of the modal */
+    #product-modal > div {
+      flex-direction: column; /* This is the key change to stack items */
+      width: 95%; /* Adjust modal width for better mobile fit */
+      padding: 1rem; /* Reduce padding */
+      gap: 1rem; /* Reduce spacing between sections */
+      max-height: 90vh; /* Prevents modal from going off-screen */
+      overflow-y: auto; /* Adds a scrollbar if content is long */
+    }
+
+    /* This rule ensures the image container takes up the full width */
+    #product-modal > div > div:first-child {
+      min-width: 100%;
+    }
+
+    /* Disable the image zoom effect on touch devices */
+    #modal-image {
+      cursor: default !important;
+      transition: none !important;
+    }
+    #modal-image:hover {
+      transform: none !important;
+    }
+  }
   </style>
 </head>
 
@@ -280,11 +314,12 @@
   </section>
 
   <footer>
-    &copy; 2025 Dazzlet. All rights reserved. | Follow us on <a href="https://www.instagram.com/dazzletjewel"
+    &copy; 2025 Dazzlet. All rights reserved. | Follow us on <a href="https://www.instagram.com/dazzletjewel" 
       target="_blank" style="color: #f4d27a; text-decoration: underline;">Instagram</a>
+      | <a href="./return-policy.html" target="_blank" style="color: #f4d27a; text-decoration: underline;">Return & Refund Policy</a>
   </footer>
 
-  <div id="product-modal"
+  <!-- <div id="product-modal"
     style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.8); z-index:1000; justify-content:center; align-items:center;">
     <div
       style="background:#fff; padding:2rem; width:80%; max-width:1000px; border-radius:10px; display:flex; gap:2rem; flex-wrap:wrap; position:relative;">
@@ -300,18 +335,93 @@
       </div>
       <div style="flex:1; min-width:250px;">
         <h2 id="modal-title">Earring Product Name</h2>
-        <p id="modal-model">Earring Model: XXX</p>
+        <h4 id="modal-model">Earring Model: XXX</h4>
         <p id="modal-description">Earring Description goes here.</p>
-        <p> Price : <del id="modal-price">Rs 150</del>  <strong id="modal-final">Rs 100</strong></p>
+        <p> <strong>Price :</strong> <del id="modal-price">Rs 150</del>  <strong id="modal-final">Rs 100</strong></p>
         <p id="modal-offer" style="color:#c62828; font-weight:bold;">30% OFF</p>
         <p id="modal-stock" style="color:green; font-weight:bold;">Availability : Out of Stock </p>
-        <a href="https://www.instagram.com/dazzletjewel" target="_blank"
-          style="color:#0e1a40; text-decoration:underline;">Buy on Instagram</a>
+
+        <div style="margin-top:16px; display:flex; gap:20px; align-items:center; flex-wrap:wrap;">
+          <div style="text-align:center;">
+            <a href="https://www.instagram.com/dazzletjewel" target="_blank">
+              <img src="./contact/intagram.jpg" alt="Instagram QR Code" style="width:100px; height:100px; border-radius:8px;">
+            </a>
+            <div><a href="https://www.instagram.com/dazzletjewel" target="_blank" style="color:#0e1a40; text-decoration:underline;">Instagram</a></div>
+          </div>
+
+          <div style="text-align:center;">
+            <a href="https://wa.me/919876543210?text=Hi%20I%20am%20interested%20in%20your%20earrings" target="_blank">
+              <img src="./contact/whatsapp.jpg" alt="WhatsApp QR Code" style="width:100px; height:100px; border-radius:8px;">
+            </a>
+            <div><a href="https://wa.me/919876543210?text=Hi%20I%20am%20interested%20in%20your%20earrings" target="_blank" style="color:#0e1a40; text-decoration:underline;">WhatsApp</a></div>
+          </div>
+        </div>
+
+        
+        <div style="margin-top:12px; padding:10px; border-left:4px solid #a88ed6; background:#faf8ff; border-radius:6px; font-size:14px; line-height:1.4; color:#333;">
+          <strong>Returns:</strong> Non-returnable for hygiene reasons unless damaged or wrong item received. 
+          Please report within <strong>24 hours</strong> with an unboxing video. 
+          <a href="./return-policy.html" target="_blank" style="color:#6a3db0; font-weight:600; text-decoration:underline;">Full policy</a>
+        </div>
       </div>
+
       <button onclick="document.getElementById('product-modal').style.display='none'"
         style="position:absolute; top:10px; right:20px; background:none; border:none; color:#000; font-size:2rem; cursor:pointer;">&times;</button>
     </div>
-  </div>
+  </div> -->
+
+  <div id="product-modal"
+    style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.8); z-index:1000; justify-content:center; align-items:center;">
+    <div
+      style="background:#fff; padding:2rem; width:80%; max-width:1000px; border-radius:10px; display:flex; gap:2rem; flex-wrap:wrap; position:relative;">
+      
+      <!-- Product Image -->
+      <div style="flex:1; min-width:300px; position:relative;">
+        <img id="modal-image" src="" style="width:100%; height:auto; max-height:400px; object-fit:contain; border-radius:10px; transition: transform 0.3s ease-in-out; cursor: zoom-in;" onmouseenter="this.style.transform='scale(1.5)'" onmouseleave="this.style.transform='scale(1)'">
+        <button onclick="prevImage()"
+          style="position:absolute; top:50%; left:10px; transform:translateY(-50%); font-size:2rem; background:none; border:none; cursor:pointer;">&#10094;</button>
+        <button onclick="nextImage()"
+          style="position:absolute; top:50%; right:10px; transform:translateY(-50%); font-size:2rem; background:none; border:none; cursor:pointer;">&#10095;</button>
+        <div id="image-dots" style="text-align:center; margin-top:0.5rem;"></div>
+      </div>
+
+      <!-- Product Details -->
+      <div style="flex:1; min-width:250px;">
+        <h2 id="modal-title">Earring Product Name</h2>
+        <p id="modal-model">Earring Model: XXX</p>
+        <p id="modal-description" style="font-size: x-small;">Earring Description goes here.</p>
+        <p> Price : <del id="modal-price">Rs 150</del>  <strong id="modal-final">Rs 100</strong></p>
+        <p id="modal-offer" style="color:#c62828; font-weight:bold;">30% OFF</p>
+        <p id="modal-stock" style="color:green; font-weight:bold;">Availability : In Stock</p>
+
+        <div style="margin-top:16px; display:flex; gap:20px; align-items:center; flex-wrap:wrap;">
+          <div style="text-align:center;">
+            <a href="https://www.instagram.com/dazzletjewel" target="_blank">
+              <img src="./contact/intagram.jpg" alt="Instagram QR Code" style="width:100px; height:100px; border-radius:8px;">
+            </a>
+            <div><a href="https://www.instagram.com/dazzletjewel" target="_blank" style="color:#0e1a40; text-decoration:underline;">Instagram</a></div>
+          </div>
+
+          <div style="text-align:center;">
+            <a href="https://wa.me/919876543210?text=Hi%20I%20am%20interested%20in%20your%20earrings" target="_blank">
+              <img src="./contact/whatsapp.jpg" alt="WhatsApp QR Code" style="width:100px; height:100px; border-radius:8px;">
+            </a>
+            <div><a href="https://wa.me/919876543210?text=Hi%20I%20am%20interested%20in%20your%20earrings" target="_blank" style="color:#0e1a40; text-decoration:underline;">WhatsApp</a></div>
+          </div>
+        </div>
+
+        <div style="margin-top:12px; padding:10px; border-left:4px solid #a88ed6; background:#faf8ff; border-radius:6px; font-size:x-small; line-height:1.4; color:#333;">
+          <strong>Returns:</strong> Non-returnable for hygiene reasons unless damaged or wrong item received. 
+            Please report within <strong>24 hours</strong> with an unboxing video. 
+          <a href="./return-policy.html" target="_blank" style="color:#6a3db0; font-weight:600; text-decoration:underline;">Full policy</a>
+        </div>
+      </div>
+
+      <!-- Close Button -->
+      <button onclick="document.getElementById('product-modal').style.display='none'"
+        style="position:absolute; top:10px; right:20px; background:none; border:none; color:#000; font-size:2rem; cursor:pointer;">&times;</button>
+    </div>
+</div>
 
   <script>
     let currentImageIndex = 0;
@@ -326,7 +436,7 @@
       if (!img) return;
 
       document.getElementById('modal-title').innerText = title;
-      document.getElementById('modal-model').innerText = 'Model No :' + model;
+      document.getElementById('modal-model').innerText = 'Model No : ' + model;
       document.getElementById('modal-description').innerText = description;
       document.getElementById('modal-price').innerText = '₹' + price + '.00 /-';
       document.getElementById('modal-final').innerText = '₹' + finalPrice + '.00 /-';
@@ -357,7 +467,7 @@
       currentImageIndex = (currentImageIndex - 1 + modalImages.length) % modalImages.length;
       updateModalImage();
     }
-  </script>
+</script>
 </body>
 
 </html>
