@@ -203,6 +203,100 @@
         transform: none !important;
       }
     }
+
+    .promo-banner {
+      background: linear-gradient(90deg, #97d2cd, #f9e79f);
+      text-align: center;
+      padding: 15px 10px;
+      font-family: 'Segoe UI', sans-serif;
+      border-bottom: 3px solid #c8a951;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      /* Use flexbox for layout */
+      align-items: center;
+      /* Vertically center content */
+      justify-content: center;
+      /* Horizontally center content */
+      flex-wrap: wrap;
+      /* Allow items to wrap to a new line */
+      position: relative;
+      /* For image positioning */
+    }
+
+    .promo-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex-grow: 1;
+      /* Allows content to take up available space */
+      padding: 0 10px;
+      /* Add some padding */
+    }
+
+    .promo-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #0e1a40;
+      letter-spacing: 1px;
+      display: inline-block;
+    }
+
+    .promo-offer {
+      color: #b03a2e;
+    }
+
+    .promo-date {
+      font-size: 0.9rem;
+      color: #444;
+      margin-top: 5px;
+    }
+
+    .promo-image {
+      width: 100px;
+      /* Base size for images */
+      height: auto;
+      margin: 0 10px;
+      /* Add spacing between images and text */
+    }
+
+    /* Media query for mobile devices */
+    @media (max-width: 600px) {
+      .promo-banner {
+        flex-direction: column;
+        /* Stack items vertically on small screens */
+        padding: 10px 5px;
+        /* Reduce padding */
+      }
+
+      .promo-image {
+        width: 80px;
+        /* Reduce image size for smaller screens */
+        margin: 5px 0;
+        /* Adjust margin for vertical stacking */
+      }
+
+      .promo-title {
+        font-size: 1rem;
+        /* Reduce font size */
+      }
+
+      .promo-date {
+        font-size: 0.8rem;
+        /* Reduce font size */
+      }
+
+      .promo-image.left-corner {
+        order: -1;
+      }
+
+      /* Place left image at the top */
+      .promo-image.right-corner {
+        order: 1;
+      }
+
+      /* Place right image at the bottom */
+    }
   </style>
 </head>
 <!-- Google tag (gtag.js) -->
@@ -218,29 +312,28 @@
 <body>
   <header>
     <a href="index.html">
-      <img src="./images/Dazzlet-logo.png" alt="Dazzlet Logo" >
+      <img src="./images/Dazzlet-logo.png" alt="Dazzlet Logo">
     </a>
     <p>Handcrafted with care, our jewellery celebrates your elegance, uniqueness, and sparkle. Whether it's pearls,
       charms, or minimalistic trends — each piece is made to reflect you.</p>
   </header>
 
-  <!-- Sale Banner-->
-  
-  <!--
-  <div style="
-  background: linear-gradient(90deg, #97d2cd, #f9e79f);
-  text-align: center;
-  padding: 15px 10px;
-  font-family: 'Segoe UI', sans-serif;
-  border-bottom: 3px solid #c8a951;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-    <span style="display: inline-block; font-size: 1.2rem; font-weight: bold; color: #0e1a40; letter-spacing: 1px;">
-      🎉 Grand Launch Fest – <span style="color:#b03a2e;">20% OFF</span> on Final Bill 🎉
-    </span>
-    <div style="font-size: 0.9rem; color:#444; margin-top: 5px;">
-      Hurry! Offer valid from 19 till 21 August 2025.
+  <!-- Sale Banner -->
+
+  <div class="promo-banner">
+    <img src="./images/sales-images/ganesh1.jpg" alt="Confetti and Balloons" class="promo-image left-corner">
+
+    <div class="promo-content">
+      <span class="promo-title">
+        🎉 Ganesh Chaturthi – <span class="promo-offer">15% OFF</span> on Final Bill 🎉
+      </span>
+      <div class="promo-date">
+        Hurry! Offer valid from 25 till 27 August 2025.
+      </div>
     </div>
-  </div> -->
+
+    <img src="./images/sales-images/ganesh2.jpg" alt="Gift Box" class="promo-image right-corner">
+  </div>
 
   <section class="section">
     <h2>Explore Our Collections</h2>
@@ -371,7 +464,7 @@
         <img src="./images/ao/ao004.jpg" alt="best earrings for girls, lightweight earrings">
       </a>
     </div>
-    
+
     <!-- <div style="text-align:center; margin-top:1rem;">
       <a href="./designer-pearl.html" class="btn-see-more">See All</a>
     </div> -->
